@@ -17,6 +17,9 @@
 
 # Features supported:
 ## Additional Features
+<details>
+    <summary><b>Click here for more details</b></summary>
+
 - Get detailed info about replied media (Only for Telegram file)
 - Speedtest with picture results
 - Stop duplicate cloning Google Drive & mirroring Mega support
@@ -40,10 +43,16 @@ yts, eztv, torlock, rarbg
 - Direct links supported:
 ```
 letsupload.io, hxfile.co, anonfiles.com, fembed.com, femax20.com, layarkacaxxi.icu,
-naniplay.com, naniplay.nanime.in, naniplay.nanime.biz, sbembed.com, streamsb.net, feurl.com, pixeldrain.com, uptobox.com (Uptobox account must be premium),
-1drv.ms (Only works for file not folder or busines account)
+naniplay.com, naniplay.nanime.in, naniplay.nanime.biz, sbembed.com, streamsb.net,
+feurl.com, pixeldrain.com, uptobox.com (Uptobox account must be premium),
+1drv.ms (Only works for file not folder or business account)
 ```
+</details>
+
 ## From Original Repos
+<details>
+    <summary><b>Click here for more details</b></summary>
+
 - Mirroring direct download links, Torrent, and Telegram files to Google Drive
 - Mirroring Mega.nz links to Google Drive (If your Mega account not premium, it will limit 4-5gb/day)
 - Copy files from someone's Drive to your Drive (Using Autorclone)
@@ -66,8 +75,12 @@ APM, ARJ, CHM, CPIO, CramFS, DEB, DMG, FAT,
 HFS, LZH, LZMA, LZMA2, MBR, MSI, MSLZ, NSIS, 
 NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 ```
+</details>
 
 # How to deploy?
+<details>
+    <summary><b>Click here for more details</b></summary>
+
 Deploying is pretty much straight forward and is divided into several steps as follows:
 ## Installing requirements
 
@@ -92,6 +105,8 @@ sudo pacman -S docker python
 ```
 pip3 install -r requirements-cli.txt
 ```
+</details>
+
 ## Generate Database
 <details>
     <summary><b>Click here for more details</b></summary>
@@ -138,9 +153,11 @@ Fill up rest of the fields. Meaning of each fields are discussed below:
 - **UPSTREAM_REPO**: Link for Bot Upstream Repo, if you want default update, fill ```https://github.com/vincreator/eunha```.
 - **UPSTREAM_BRANCH**: Link for Bot Upstream Repo (Recommended using master branch)
 ### Optional Field
+- **ACCOUNTS_ZIP_URL**: (Optional) Only if you want to load your service accs externally from an index link. Archive your service accs json files to a zip file directly (don't archive the accounts folder. Select all the jsons inside and zip them only instead. Name the zip file with whatever you want, it doesn't matter). Fill this with the direct link of that file.
+- **TOKEN_PICKLE_URL**: (Optional) Only if you want to load your token.pickle externally from an index link. Fill this with the direct link of that file.
 - **AUTHORIZED_CHATS**: Fill user_id and chat_id of you want to authorize.
 - **IS_TEAM_DRIVE**: Set to `True` if `GDRIVE_FOLDER_ID` is from a Team Drive else `False` or Leave it empty.
-- **USE_SERVICE_ACCOUNTS**: (Leave empty if unsure) Whether to use Service Accounts or not. For this to work see [Using service accounts](https://github.com/breakdowns/slam-mirrorbot#generate-service-accounts-what-is-service-account) section below.
+- **USE_SERVICE_ACCOUNTS**: (Leave empty if unsure) Whether to use Service Accounts or not. For this to work see [Using service accounts](https://github.com/vincreator/eunha#generate-service-accounts-what-is-service-account) section below.
 - **INDEX_URL**: Refer to https://github.com/ParveenBhadooOfficial/Google-Drive-Index The URL should not have any trailing '/'
 - **MEGA_API_KEY**: Mega.nz api key to mirror mega.nz links. Get it from [Mega SDK Page](https://mega.nz/sdk)
 - **MEGA_EMAIL_ID**: Your email id you used to sign up on mega.nz for using premium accounts (Leave th)
@@ -180,6 +197,9 @@ Three buttons are already added of Drive Link, Index Link, and View Link, you ca
 </details>
 
 ## Getting Google OAuth API credential file
+<details>
+    <summary><b>Click here for more details</b></summary>
+
 - Visit the [Google Cloud Console](https://console.developers.google.com/apis/credentials)
 - Go to the OAuth Consent tab, fill it, and save.
 - Go to the Credentials tab and click Create Credentials -> OAuth Client ID
@@ -193,8 +213,11 @@ Three buttons are already added of Drive Link, Index Link, and View Link, you ca
 pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
 python3 generate_drive_token.py
 ```
+</details>
 
 ## Deploying
+<details>
+    <summary><b>Click here for more details</b></summary>
 
 - Start Docker daemon (skip if already running):
 ```
@@ -208,23 +231,19 @@ sudo docker build . -t mirrorbot
 ```
 sudo docker run mirrorbot
 ```
+</details>
 
 ## Deploying on Heroku
 
 - Give stars and Fork this repo then upload **token.pickle** to your forks
 - Hit the **DEPLOY TO HEROKU** button and follow the further instructions in the screen
-- **NOTE**: If you didn't upload **token.pickle**, uploading will not work. How to generate **token.pickle**? [Read here](https://github.com/vincreator/eunha#getting-google-oauth-api-credential-file)
+- **NOTE**: If you didn't upload **token.pickle**, uploading will not work, or you can upload your **token.pickle** to your Index and put your **token.pickle** link to **TOKEN_PICKLE_URL**. How to generate **token.pickle**? [Read here](https://github.com/vincreator/eunha#getting-google-oauth-api-credential-file)
 - Recommended to use 1 App in 1 Heroku accounts
 
 <p><a href="https://heroku.com/deploy"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
 ## Deploying on Heroku with heroku-cli and Goorm IDE
 <p><a href="https://telegra.ph/How-to-Deploy-a-Mirror-Bot-to-Heroku-with-CLI-05-06"> <img src="https://img.shields.io/badge/see%20on%20telegraph-grey?style=for-the-badge" width="190""/></a></p>
-
-## Video Tutorial
-<p><a href="https://www.youtube.com/watch?v=WIhL0TrisfQ&t=1s"> <img src="https://img.shields.io/badge/See%20On%20Youtube-black?style=for-the-badge&logo=youtube" width="200""/></a></p>
-
-**NOTE**: Recommended to generate **token.pickle** manually. [Read here](https://github.com/breakdowns/slam-mirrorbot#getting-google-oauth-api-credential-file)
 
 ## Deploy on Heroku with heroku-cli Text
 <details>
@@ -350,6 +369,9 @@ python3 add_to_team_drive.py -d SharedTeamDriveSrcID
 ```
 
 # Youtube-dl authentication using .netrc file
+<details>
+    <summary><b>Click here for more details</b></summary>
+    
 For using your premium accounts in Youtube-dl or for protected Index Links, edit the netrc file according to following format:
 ```
 machine host login username password my_youtube_password
@@ -359,6 +381,8 @@ For Index Link with only password without username, even http auth will not work
 machine example.workers.dev password index_password
 ```
 Where host is the name of extractor (eg. Youtube, Twitch). Multiple accounts of different hosts can be added each separated by a new line.
+
+</details>
 
 # Credits
 
