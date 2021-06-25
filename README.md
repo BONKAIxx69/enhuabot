@@ -205,7 +205,7 @@ Three buttons are already added of Drive Link, Index Link, and View Link, you ca
 - Go to the Credentials tab and click Create Credentials -> OAuth Client ID
 - Choose Desktop and Create.
 - Use the download button to download your credentials.
-- Move that file to the root of mirrorbot, and rename it to **credentials.json**
+- Move that file to the root of Eunhabot, and rename it to **credentials.json**
 - Visit [Google API page](https://console.developers.google.com/apis/library)
 - Search for Drive and enable it if it is disabled
 - Finally, run the script to generate **token.pickle** file for Google Drive:
@@ -234,11 +234,14 @@ sudo docker run mirrorbot
 </details>
 
 ## Deploying on Heroku
+<details>
+    <summary><b>Click here for more details</b></summary>
 
 - Give stars and Fork this repo then upload **token.pickle** to your forks
 - Hit the **DEPLOY TO HEROKU** button and follow the further instructions in the screen
 - **NOTE**: If you didn't upload **token.pickle**, uploading will not work, or you can upload your **token.pickle** to your Index and put your **token.pickle** link to **TOKEN_PICKLE_URL**. How to generate **token.pickle**? [Read here](https://github.com/vincreator/eunha#getting-google-oauth-api-credential-file)
 - Recommended to use 1 App in 1 Heroku accounts
+</details>
 
 <p><a href="https://heroku.com/deploy"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
@@ -304,9 +307,13 @@ heroku ps:scale worker=1 -a appname
 </details>
 
 # Using Service Accounts for uploading to avoid user rate limit
+<details>
+    <summary><b>Click here for more details</b></summary>
+
 For Service Account to work, you must set **USE_SERVICE_ACCOUNTS=**"True" in config file or environment variables, 
 Many thanks to [AutoRClone](https://github.com/xyou365/AutoRclone) for the scripts.
 **NOTE**: Using Service Accounts is only recommended while uploading to a Team Drive.
+</details>
 
 ## Generate Service Accounts. [What is Service Account](https://cloud.google.com/iam/docs/service-accounts)
 <details>
@@ -363,10 +370,14 @@ python3 gen_sa_accounts.py --download-keys project_id
 </details>
 
 ## Add all the Service Accounts to the Team Drive
+<details>
+    <summary><b>Click here for more details</b></summary>
+
 - Run:
 ```
 python3 add_to_team_drive.py -d SharedTeamDriveSrcID
 ```
+</details>
 
 # Youtube-dl authentication using .netrc file
 <details>
@@ -387,11 +398,15 @@ Where host is the name of extractor (eg. Youtube, Twitch). Multiple accounts of 
 # Credits
 
 Thanks to:
+<details>
+    <summary><b>Click here for more details</b></summary>
+    
 - [out386](https://github.com/out386) heavily inspired from Telegram Bot which is written in JS
 - [Izzy12](https://github.com/lzzy12/) for original repo
 - [Dank-del](https://github.com/Dank-del/) for base repo
 - [magneto261290](https://github.com/magneto261290/) for some features
 - [SVR666](https://github.com/SVR666/) for some features & fixes
 - [anasty17](https://github.com/anasty17) for some features & help
+</details>
 
 And many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/vincreator/eunha/graphs/contributors).
